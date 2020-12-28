@@ -1,3 +1,16 @@
+\newif\ifrus
+\newif\ifeng
+\newif\ifweb
+\newif\ifgamedev
+
+\newcommand{\rus}{\rustrue}
+\newcommand{\eng}{\engtrue}
+\newcommand{\web}{\webtrue}
+\newcommand{\gamedev}{\gamedevtrue}
+
+\newcommand{\lang}[2]{\ifrus #1 \fi\ifeng #2 \fi}
+\newcommand{\target}[2]{\ifweb #1 \fi\ifgamedev #2 \fi}
+
 %%%%%%%%%%%%%%%%%
 % This is an sample CV template created using altacv.cls
 % (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
@@ -21,6 +34,9 @@
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
 %% AltaCV uses the fontawesome5 and academicons fonts
 %% and packages.
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
@@ -77,8 +93,9 @@
 % \addbibresource{sample.bib}
 
 \begin{document}
-\name{Your Name Here}
-\tagline{Your Position or Tagline Here}
+\name{\lang{Егор Баканов}{Egor Bakanov}}
+\tagline{\target{C\#~developer}{Unity developer}}
+
 %% You can add multiple photos on the left or right
 % \photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}

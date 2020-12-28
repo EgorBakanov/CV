@@ -1,0 +1,87 @@
+{
+    "folders": [
+      {
+        "path": "."
+      }
+    ],
+    "settings": {
+      "latex-workshop.latex.recipes": [
+        {
+          "name": "Gamedev rus",
+          "tools": ["latexmk gamedev rus"]
+        },
+        {
+          "name": "Gamedev eng",
+          "tools": ["latexmk gamedev eng"]
+        },
+        {
+          "name": "Web rus",
+          "tools": ["latexmk web rus"]
+        },
+        {
+          "name": "Web eng",
+          "tools": ["latexmk web eng"]
+        }
+      ],
+      "latex-workshop.latex.tools": [
+        {
+          "name": "latexmk gamedev rus",
+          "command": "latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-usepretex=\"\\AtBeginDocument{\\gamedev\\rus}\"",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "latexmk gamedev eng",
+          "command": "latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-usepretex=\"\\AtBeginDocument{\\gamedev\\eng}\"",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+          ],
+          "env": {}
+        },{
+          "name": "latexmk web rus",
+          "command": "latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-usepretex=\"\\AtBeginDocument{\\web\\rus}\"",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "latexmk web eng",
+          "command": "latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-usepretex=\"\\AtBeginDocument{\\web\\eng}\"",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+      ],
+      "latex-workshop.latex.autoClean.run": "onBuilt",
+      "latex-workshop.latex.recipe.default": "lastUsed"
+    }
+  }
+  
