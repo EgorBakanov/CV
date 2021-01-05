@@ -42,7 +42,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: version-${{ github.run_number }}
           release_name: Version ${{ github.run_number }}
           body_path: .github/release-template.md
           draft: true
