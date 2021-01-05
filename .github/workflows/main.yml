@@ -60,7 +60,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ matrix.target }}_${{ matrix.language }}
-          path: bakanov_cv_${{ matrix.target }}_${{ matrix.language }}.pdf
+          path: ./
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
