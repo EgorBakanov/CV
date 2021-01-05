@@ -27,3 +27,12 @@ jobs:
         with:
           name: ${{ matrix.target }}_${{ matrix.language }}
           path: bakanov_cv_${{ matrix.target }}_${{ matrix.language }}.pdf
+  deploy:
+    name: Deploy all CV versions
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v2
+      - name: Display structure of downloaded files
+        run: ls -R
