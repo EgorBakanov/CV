@@ -1,0 +1,32 @@
+name: Build and deploy CV
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build CV for ${{ matrix.target }} on ${{ matrix.language }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [rus, eng]
+        target: [web, gamedev]
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Compile project
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          args: |
+            -jobname=BakanovCV_${{ matrix.target }}_${{ matrix.language }}
+            -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+            -usepretex="\AtBeginDocument{\${{ matrix.target }}\${{ matrix.language }}}"
+          compiler: latexmk
+      - name: Upload result
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.target }}_${{ matrix.language }}
+          path: BakanovCV_${{ matrix.target }}_${{ matrix.language }}.pdf
