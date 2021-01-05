@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.target }}_${{ matrix.language }}
-          path: BakanovCV_${{ matrix.target }}_${{ matrix.language }}.pdf
+          path: bakanov_cv_${{ matrix.target }}_${{ matrix.language }}.pdf
