@@ -20,9 +20,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          args: -jobname=bakanov_cv_${{ matrix.target }}_${{ matrix.language }} \
+          args: "-jobname=bakanov_cv_${{ matrix.target }}_${{ matrix.language }} \
             -pdf -file-line-error -halt-on-error -interaction=nonstopmode \
-            -usepretex="\AtBeginDocument{\${{ matrix.target }}\${{ matrix.language }}}"
+            -usepretex="\AtBeginDocument{\${{ matrix.target }}\${{ matrix.language }}}""
           compiler: latexmk
       - name: Upload result
         uses: actions/upload-artifact@v2
