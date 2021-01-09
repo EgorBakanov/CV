@@ -55,6 +55,8 @@ jobs:
     name: Deploy CV for ${{ matrix.target }} on ${{ matrix.language }}
     runs-on: ubuntu-latest
     needs: [build, prepare-release]
+    outputs:
+      id: ${{ needs.prepare-release.outputs.id }}
     strategy:
       matrix:
         language: [rus, eng]
@@ -78,11 +80,11 @@ jobs:
   finish:
     name: Finish release
     runs-on: ubuntu-latest
-    needs: [prepare-release, deploy]
+    needs: [deploy]
     steps:
       - name: Publish release
         uses: eregon/publish-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          release_id: ${{ needs.prepare-release.outputs.id }}
+          release_id: ${{ needs.deploy.outputs.id }}

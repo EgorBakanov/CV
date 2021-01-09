@@ -1,0 +1,36 @@
+\cvsection{My Life Philosophy}
+\begin{quote}
+``Something smart or heartfelt, preferably in one sentence.''
+\end{quote}
+
+
+\cvsection{Most Proud of}
+\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
+\divider
+\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+
+
+\cvsection{Publications}
+\nocite{*}
+\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+\divider
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+\divider
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+
+\cvsection{Referees}
+\cvref{name}{email}{mailing address}
+
+
+\cvsection{A Day of My Life}
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\wheelchart{1.5cm}{0.5cm}{%
+  6/8em/accent!30/{Sleep,\\beautiful sleep},
+  3/8em/accent!40/Hopeful novelist by night,
+  8/8em/accent!60/Daytime job,
+  2/10em/accent/Sports and relaxation,
+  5/6em/accent!20/Spending time with family
+}

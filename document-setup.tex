@@ -1,0 +1,56 @@
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% PACKAGES
+\usepackage[T2A]{fontenc}
+\usepackage[russian, english]{babel}
+\usepackage{paracol}
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+
+% COLORS
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% FONTS
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+% \AtBeginEnvironment{itemize}{\small}
+
+% BULLETS
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+% CONDITIONAL COMPILATION
+\newif\ifrus
+\newif\ifeng
+\newif\ifweb
+\newif\ifgamedev
+
+\newcommand{\rus}{\rustrue}
+\newcommand{\eng}{\engtrue}
+\newcommand{\web}{\webtrue}
+\newcommand{\gamedev}{\gamedevtrue}
+
+\newcommand{\lang}[2]{\ifrus #1 \fi\ifeng #2 \fi}
+\newcommand{\target}[2]{\ifweb #1 \fi\ifgamedev #2 \fi}
+
+% OTHER
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\cvlanguage}[2]{%
+  \cvachievement{\small\faCircle}{#1}{#2}
+}
+\columnratio{0.6}
